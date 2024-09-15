@@ -1,5 +1,6 @@
 :root {
     --secondary-color: rgb(165, 35, 35);
+    --third-color: rgb(163, 141, 66);
 }
 
 body {
@@ -11,6 +12,10 @@ body {
 
 h1, h2, h3 {
     margin: 0;
+}
+
+.main-title {
+    max-height: 15%;
 }
 
 .game-container {
@@ -25,11 +30,12 @@ h1, h2, h3 {
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+
 }
 
 #Gameboard {
-    max-width: 50%;
-    height: 100%;
+    max-width: 45%;
+    min-height: 50%;
     max-height: 70%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -40,11 +46,23 @@ h1, h2, h3 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
     color: var(--secondary-color);
+
+    border: inset 10px var(--third-color);
 
     max-width: 100%;
     max-height: 100%;
+}
+
+.player-title-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: calc(20% + 3rem);
+    text-align: center;
+
 }
 
 .player-title {
@@ -56,8 +74,9 @@ h1, h2, h3 {
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    height: calc(80% - 3rem);
+    height: calc(80%);
     width: 100%;
+
 }
 
 .dice-container {
@@ -80,7 +99,6 @@ h1, h2, h3 {
     font-size: inherit;
     font-family: inherit;
     border: none;
-    /* border: solid 3px rgb(165, 35, 35); */
     transition-duration: .5s;
 }
 
