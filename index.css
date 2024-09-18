@@ -106,3 +106,8 @@ h1, h2, h3 {
     background-color: var(--secondary-color);
     color: white;
 }
+
+.roll-button:active {
+    background-color: white;
+    color: var(--secondary-color);
+}
