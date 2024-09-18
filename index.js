@@ -1,22 +1,36 @@
-
-
-
-function randomDiceImage()
-{
-    const images = ["dice1", "dice2", "dice3", "dice4", "dice5", "dice6"];
-
-    let randomImage = Math.floor(Math.random() * 6);
-     let imageString = "images/" + images[randomImage] + ".png";
-    return imageString;
-}
-
-var numPlayers = 2;
+var numPlayers = 4;
 var dicePerPlayer = 2;
 
 var gameboard = document.getElementById("Gameboard");
 gameboard.innerHTML = "";
 
 fillGameboard(numPlayers, dicePerPlayer);
+
+const rollButton = document.getElementsByClassName("roll-button");
+
+if (rollButton.length != 0) 
+{
+    rollButton[0].addEventListener("click", async () => {
+        let diceImgs = document.getElementsByClassName("dice-img");
+
+
+        for (let i = 0; i < 6; i++) 
+        {
+            await sleep(150);
+            for (let img of diceImgs) 
+            {
+
+
+                img.src = generateRandomDiceImage();
+            }
+        }
+
+    })
+}
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
 
 function fillGameboard(playerCount, diceCount) {
     for (let player = 0; player < playerCount; player++) {
@@ -84,10 +98,19 @@ function fillGameboard(playerCount, diceCount) {
                 function createDiceImage() {
                     let diceImage = document.createElement("img");
                     diceImage.classList.add("dice-img");
-                    diceImage.src = randomDiceImage(); //"images/dice5.png";
+                    diceImage.src = generateRandomDiceImage(); //"images/dice5.png";
                     return diceImage;
                 }
             }
         }
     }
+}
+
+function generateRandomDiceImage()
+{
+    const images = ["dice1", "dice2", "dice3", "dice4", "dice5", "dice6"];
+
+    let randomImage = Math.floor(Math.random() * 6);
+     let imageString = "images/" + images[randomImage] + ".png";
+    return imageString;
 }
