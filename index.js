@@ -1,3 +1,15 @@
+
+
+
+function randomDiceImage()
+{
+    const images = ["dice1", "dice2", "dice3", "dice4", "dice5", "dice6"];
+
+    let randomImage = Math.floor(Math.random() * 6);
+     let imageString = "images/" + images[randomImage] + ".png";
+    return imageString;
+}
+
 var numPlayers = 2;
 var dicePerPlayer = 2;
 
@@ -72,7 +84,7 @@ function fillGameboard(playerCount, diceCount) {
                 function createDiceImage() {
                     let diceImage = document.createElement("img");
                     diceImage.classList.add("dice-img");
-                    diceImage.src = "images/dice5.png";
+                    diceImage.src = randomDiceImage(); //"images/dice5.png";
                     return diceImage;
                 }
             }
