@@ -95,7 +95,7 @@ h1, h2, h3 {
 }
 
 .roll-button {
-    width: 15%;
+    width: 20%;
     height: 10%;
     font-size: inherit;
     font-family: inherit;
@@ -142,10 +142,14 @@ h1, h2, h3 {
         font-size: 1.5rem;
     }
 
+    .game-container {
+        justify-content: center;
+        row-gap: 10%;
+    }
+
     .main-title {
         font-size: 4rem;
     }
-
 
     #Gameboard {
         min-height: 30%;
@@ -169,9 +173,14 @@ h1, h2, h3 {
     .main-title {
         font-size: 3rem;
     }
-    
+
+    .game-container {
+        justify-content: center;
+        row-gap: 10%;
+    }
+
     #Gameboard {
-        min-height: 20%;
+        min-height: 25%;
     }
 
     .player-board {
@@ -180,13 +189,18 @@ h1, h2, h3 {
 
 
     .roll-button {
-        height: 4%;
+        height: 6%;
     }
 }
 
 @media screen and (max-width: 400px) {
     body {
         font-size: .75rem;
+    }
+
+    .game-container {
+        justify-content: center;
+        row-gap: 5%;
     }
 
     .main-title {
