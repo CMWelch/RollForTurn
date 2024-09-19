@@ -1,4 +1,4 @@
-var numPlayers = 4;
+var numPlayers = 2;
 var dicePerPlayer = 2;
 
 var gameboard = document.getElementById("Gameboard");
@@ -70,7 +70,7 @@ function fillGameboard(playerCount, diceCount) {
             function createPlayerTitle() {
                 let playerTitleHeader = document.createElement("h3");
                 playerTitleHeader.classList.add("player-title");
-                playerTitleHeader.textContent = "Player" + playerNum;
+                playerTitleHeader.textContent = "Player " + playerNum;
                 return playerTitleHeader;
             }
         }
