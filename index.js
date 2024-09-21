@@ -13,14 +13,11 @@ if (rollButton.length != 0)
     rollButton[0].addEventListener("click", async () => {
         let diceImgs = document.getElementsByClassName("dice-img");
 
-
         for (let i = 0; i < 6; i++) 
         {
             await sleep(150);
             for (let img of diceImgs) 
             {
-
-
                 img.src = generateRandomDiceImage();
             }
         }
